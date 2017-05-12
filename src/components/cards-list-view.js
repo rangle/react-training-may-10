@@ -15,7 +15,7 @@ const renderRobots = (robots) => {
   ));
 };
 
-export const CardsContainer = ({ robots, query, onSearch }) => (
+export const CardsListView = ({ robots, query, onSearch }) => (
   <div className="flex flex-column vh-100 sans-serif">
     <header className="pv4 bb tc">
       <h1 className="f2 b ttu tracked light-red">ROBODEX</h1>
@@ -31,7 +31,7 @@ export const CardsContainer = ({ robots, query, onSearch }) => (
   </div>
 );
 
-CardsContainer.PropTypes = {
+CardsListView.PropTypes = {
   robots: PropTypes.array,
   query: PropTypes.string,
   onSearch: PropTypes.func,

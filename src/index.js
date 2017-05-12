@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom';
 import 'tachyons';
 import App from './containers/app';
 import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
-import rootReducer from './reducers'
+import configureStore, { history } from './store/configureStore';
+import rootReducer from './reducers';
+import { Route } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
 
 
 const store = configureStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={ store }>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );

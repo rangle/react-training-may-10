@@ -1,31 +1,8 @@
 import React, { Component } from 'react';
-import { CardsContainer } from './cards-container';
-import { connect } from 'react-redux';
-import { searchAction } from '../actions/query';
+import CardsListViewContainer from './cards-list-view-container';
 import { robotsFetchAction } from '../actions/robots';
-
-
-const getFilteredRobots = (robots, query) => {
-  return robots.filter(robot => {
-    return robot.name
-      .toLowerCase()
-      .includes(query.toLowerCase());
-  });
-}
-
-const mapStateToProps = (state) => {
-  return {
-    robots: state.robots,
-    query: state.query,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onSearch: (query) => dispatch(searchAction(query)),
-    onLoadData: () => dispatch(robotsFetchAction()),
-  }
-}
+import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class App extends Component {
   componentDidMount() {
@@ -33,17 +10,16 @@ class App extends Component {
   }
 
   render() {
-    const { robots, query, onSearch } = this.props;
-
     return (
-      <CardsContainer
-        robots={getFilteredRobots(robots, query)}
-        query={query}
-        onSearch={onSearch}
-      />
+      <div>
+        <Route exact path="/" component={CardsListViewContainer}/>
+        <Route path="/details" component={App}/>
+      </div>
     );
   }
 }
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  null, {
+  onLoadData: robotsFetchAction,
+})(App);
