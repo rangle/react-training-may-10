@@ -1,0 +1,21 @@
+exports[`test Card renders correctly 1`] = `
+<article
+  className="w5 mr3 bg-white br3 pa3 pa4-ns mv3 ba b--black-50">
+  <div
+    className="tc">
+    <img
+      alt=""
+      className="br-100 h4 w4 dib ba b--black-50 pa2"
+      src="https://robohash.org/0"
+      title="photo of robot" />
+    <h1
+      className="f3 mb2">
+      Ervin Howell
+    </h1>
+    <h2
+      className="f5 fw4 gray mt0">
+      Shanna@melissa.tv
+    </h2>
+  </div>
+</article>
+`;
