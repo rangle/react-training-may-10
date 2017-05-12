@@ -1,6 +1,6 @@
 exports[`test Card renders correctly 1`] = `
 <article
-  className="w5 mr3 bg-white br3 pa3 pa4-ns mv3 ba b--black-50">
+  className="w5 mr3 bg-light-green br3 pa3 pa4-ns mv3 ba b--black-50">
   <div
     className="tc">
     <img
