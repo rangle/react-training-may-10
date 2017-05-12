@@ -15,7 +15,6 @@ const selectRobotById = createSelector(
 );
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     robot: selectRobotById(state),
   }
