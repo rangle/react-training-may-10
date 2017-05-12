@@ -21,6 +21,6 @@ class App extends Component {
 }
 
 export default connect(
-  null, {
+  (state) => ({ router: state.router }), {
   onLoadData: robotsFetchAction,
 })(App);

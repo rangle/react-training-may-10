@@ -3,15 +3,17 @@ import PropTypes from 'proptypes';
 import { CardList } from '../components/card-list';
 import { Card } from '../components/card';
 import { Searchbar } from '../components/searchbar';
+import { Link } from 'react-router-dom';
 
 const renderRobots = (robots) => {
   return robots.map((robot) => (
-    <Card
-      key={robot.id}
-      id={robot.id}
-      name={robot.name}
-      email={robot.email}
-    />
+    <Link to={`/details/${robot.id}`} key={robot.id}>
+      <Card
+        id={robot.id}
+        name={robot.name}
+        email={robot.email}
+      />
+    </Link>
   ));
 };
 
