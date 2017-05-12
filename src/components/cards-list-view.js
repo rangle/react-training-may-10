@@ -15,7 +15,7 @@ const renderRobots = (robots) => {
   ));
 };
 
-export const CardsListView = ({ robots, query, onSearch }) => (
+export const CardsListView = ({ robots, query, onSearch, match }) => (
   <div className="flex flex-column vh-100 sans-serif">
     <header className="pv4 bb tc">
       <h1 className="f2 b ttu tracked light-red">ROBODEX</h1>

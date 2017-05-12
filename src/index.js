@@ -5,7 +5,6 @@ import App from './containers/app';
 import { Provider } from 'react-redux';
 import configureStore, { history } from './store/configureStore';
 import rootReducer from './reducers';
-import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 
 

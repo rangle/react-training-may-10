@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { searchAction } from '../actions/query';
 import { robotsFetchAction } from '../actions/robots';
 import { CardsListView } from '../components/cards-list-view';
+import { createSelector } from 'reselect';
 
 const getFilteredRobots = (robots, query) => {
   return robots.filter(robot => {
@@ -11,9 +12,17 @@ const getFilteredRobots = (robots, query) => {
   });
 }
 
+const filteredRobotsSelector = createSelector(
+  [
+    state => state.robots,
+    state => state.query,
+  ],
+  getFilteredRobots,
+);
+
 const mapStateToProps = (state) => {
   return {
-    robots: state.robots,
+    robots: filteredRobotsSelector(state),
     query: state.query,
   }
 };
