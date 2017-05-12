@@ -7,6 +7,6 @@ const queryReducer = (state = '', action) => {
     default:
       return state;
   }
-}
+};
 
 export default queryReducer;
