@@ -11,6 +11,6 @@ export const robotsFetchAction = () => {
           results: robots,
         },
       }))
-      .catch(dispatch({ type: 'ROBOTS_FETCH_FAILED' }))
+      .catch(() => dispatch({ type: 'ROBOTS_FETCH_FAILED' }))
   }
 }
