@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'proptypes';
-import { CardList } from './card-list';
-import { Card } from './card';
-import { Searchbar } from './searchbar';
+import { CardList } from '../components/card-list';
+import { Card } from '../components/card';
+import { Searchbar } from '../components/searchbar';
 
 const renderRobots = (robots) => {
   return robots.map((robot) => (
